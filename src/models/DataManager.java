@@ -13,7 +13,7 @@ import java.util.List;
 public class DataManager {
     private List<MealModel> meals;
     private List<OrderModel> orders;
-    private List<UserModel> users;
+    private List<CustomerModel> users;
 
     private static final String MEALS_FILE = "database/meals.json";
     private static final String ORDERS_FILE = "database/orders.json";
@@ -26,61 +26,18 @@ public class DataManager {
         users = new ArrayList<>();
     }
 
-    // Meal management
     public void addMeal(MealModel meal) {
         meals.add(meal);
-    }
-
-    public MealModel getMealById(int id) {
-        for (MealModel meal : meals) {
-            if (meal.getId() == id) {
-                return meal;
-            }
-        }
-        return null;
     }
 
     public List<MealModel> getAllMeals() {
         return meals;
     }
 
-    // Order management
-    public void addOrder(OrderModel order) {
-        orders.add(order);
-    }
-
-    public OrderModel getOrderById(int id) {
-        for (OrderModel order : orders) {
-            if (order.getId() == id) {
-                return order;
-            }
-        }
-        return null;
-    }
-
     public List<OrderModel> getAllOrders() {
         return orders;
     }
 
-    // User management
-    public void addUser(UserModel user) {
-        users.add(user);
-    }
-
-    public UserModel getUserById(int id) {
-        for (UserModel user : users) {
-            if (user.getId() == id) {
-                return user;
-            }
-        }
-        return null;
-    }
-
-    public List<UserModel> getAllUsers() {
-        return users;
-    }
-
-    // Save data to JSON
     public void saveData() {
         Gson gson = new Gson();
         try (FileWriter mealWriter = new FileWriter(MEALS_FILE);
@@ -96,7 +53,6 @@ public class DataManager {
         }
     }
 
-    // Load data from JSON
     public void loadData() {
         Gson gson = new Gson();
 
@@ -104,9 +60,12 @@ public class DataManager {
              FileReader orderReader = new FileReader(ORDERS_FILE);
              FileReader userReader = new FileReader(USERS_FILE)) {
 
-            Type mealListType = new TypeToken<List<MealModel>>() {}.getType();
-            Type orderListType = new TypeToken<List<OrderModel>>() {}.getType();
-            Type userListType = new TypeToken<List<UserModel>>() {}.getType();
+            Type mealListType = new TypeToken<List<MealModel>>() {
+            }.getType();
+            Type orderListType = new TypeToken<List<OrderModel>>() {
+            }.getType();
+            Type userListType = new TypeToken<List<CustomerModel>>() {
+            }.getType();
 
             meals = gson.fromJson(mealReader, mealListType);
             orders = gson.fromJson(orderReader, orderListType);
