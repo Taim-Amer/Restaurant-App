@@ -12,7 +12,7 @@ public class EmployeeWindow extends JFrame {
     private final JButton categoryButton;
     private final JButton mealButton;
     private final JButton customerButton;
-    private final JPanel contentPanel;  // اللوحة لعرض المكونات حسب الزر المضغوط
+    private final JPanel contentPanel;
 
     public EmployeeWindow() {
         panel = new GradientPanel();
@@ -21,7 +21,6 @@ public class EmployeeWindow extends JFrame {
         setSize(1500, 900);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        // إنشاء لوحة الأزرار
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 50));
         buttonPanel.setOpaque(false);
 
@@ -37,11 +36,9 @@ public class EmployeeWindow extends JFrame {
         categoryButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         mealButton.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        // إنشاء لوحة جديدة لعرض المكونات حسب الزر
         contentPanel = new JPanel();
-        contentPanel.setLayout(new CardLayout());  // استخدام CardLayout لتبديل المحتوى بسهولة
+        contentPanel.setLayout(new CardLayout());
 
-        // إضافة المكونات لكل زر
         JPanel customerPanel = createCustomerPanel();
         JPanel categoryPanel = createCategoryPanel();
         JPanel mealPanel = createMealPanel();
@@ -50,12 +47,10 @@ public class EmployeeWindow extends JFrame {
         contentPanel.add(categoryPanel, "Category");
         contentPanel.add(mealPanel, "Meal");
 
-        // ضبط تخطيط النافذة باستخدام BorderLayout
         panel.setLayout(new BorderLayout());
-        panel.add(buttonPanel, BorderLayout.NORTH);  // الأزرار في الجزء العلوي
-        panel.add(contentPanel, BorderLayout.CENTER);  // المحتوى في المنتصف (أسفل الأزرار)
+        panel.add(buttonPanel, BorderLayout.NORTH);
+        panel.add(contentPanel, BorderLayout.CENTER);
 
-        // إضافة المستمعين للأزرار لتغيير المحتوى عند الضغط
         customerButton.addActionListener(e -> Functions.showPanel(contentPanel, "Customer"));
         categoryButton.addActionListener(e -> Functions.showPanel(contentPanel, "Category"));
         mealButton.addActionListener(e -> Functions.showPanel(contentPanel, "Meal"));
@@ -64,27 +59,21 @@ public class EmployeeWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    // دالة لإنشاء محتوى خاص بـ Customer
     private JPanel createCustomerPanel() {
         JPanel customerPanel = new JPanel();
         customerPanel.add(new JLabel("محتوى خاص بـ Customer"));
-        // يمكنك إضافة مكونات أخرى هنا
         return customerPanel;
     }
 
-    // دالة لإنشاء محتوى خاص بـ Category
     private JPanel createCategoryPanel() {
         JPanel categoryPanel = new JPanel();
         categoryPanel.add(new JLabel("محتوى خاص بـ Category"));
-        // يمكنك إضافة مكونات أخرى هنا
         return categoryPanel;
     }
 
-    // دالة لإنشاء محتوى خاص بـ Meal
     private JPanel createMealPanel() {
         JPanel mealPanel = new JPanel();
         mealPanel.add(new JLabel("محتوى خاص بـ Meal"));
-        // يمكنك إضافة مكونات أخرى هنا
         return mealPanel;
     }
 
