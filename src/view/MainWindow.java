@@ -36,7 +36,8 @@ public class MainWindow extends javax.swing.JFrame {
         setTitle("Main Window");
         setContentPane(panel1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 500);
+        setResizable(false);
+        setSize(600, 500);
         setLocationRelativeTo(null);
     }
 
