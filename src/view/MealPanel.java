@@ -25,7 +25,7 @@ public class MealPanel extends JPanel {
         setLayout(new BorderLayout());
         setBackground(new Color(245, 245, 245)); // خلفية لونية فاتحة
 
-        // إعداد اللوحة التي تحتوي على النموذج
+        // إعداد اللوحة التي تحتوي على النموذج`
         JPanel formPanel = new JPanel(new GridBagLayout());
         formPanel.setBackground(new Color(245, 245, 245)); // نفس اللون في الخلفية
         GridBagConstraints gbc = new GridBagConstraints();
