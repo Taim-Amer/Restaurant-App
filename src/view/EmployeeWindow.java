@@ -1,8 +1,8 @@
 package view;
 
+import helpers.Functions;
 import view.components.Button;
 import view.components.GradientPanel;
-import helpers.Functions;
 
 import javax.swing.*;
 import java.awt.*;
@@ -73,10 +73,53 @@ public class EmployeeWindow extends JFrame {
     }
 
     // دالة لإنشاء محتوى خاص بـ Category
+
     private JPanel createCategoryPanel() {
         JPanel categoryPanel = new JPanel();
-        categoryPanel.add(new JLabel("محتوى خاص بـ Category"));
-        // يمكنك إضافة مكونات أخرى هنا
+        categoryPanel.setLayout(new BorderLayout()); // استخدام BorderLayout لتقسيم المناطق
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        listModel.addElement("Category 1");
+        listModel.addElement("Category 2");
+        listModel.addElement("Category 3");
+        listModel.addElement("Category 4");
+
+        JList<String> categoryList = new JList<>(listModel);
+        categoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        categoryList.setCellRenderer(new DefaultListCellRenderer() {
+            @Override
+            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                label.setFont(new Font("Arial", Font.BOLD, 18)); // تكبير حجم النص
+                label.setHorizontalAlignment(SwingConstants.CENTER); // توسيط النص
+                label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+                return label;
+            }
+        });
+
+        JScrollPane scrollPane = new JScrollPane(categoryList);
+
+        // إزالة الإطار الافتراضي للقائمة
+//        categoryList.setBorder(null);
+
+        // إضافة إطار ملون وزوايا دائرية مباشرة على JScrollPane
+//        scrollPane.setBorder(new RoundedBorder(20)); // تعيين الإطار الملون (مثال: لون أزرق)
+
+        // إضافة العنوان والقائمة إلى لوحة على الجانب الأيسر
+        JPanel leftPanel = new JPanel(new BorderLayout());
+//        leftPanel.add(titleLabel, BorderLayout.NORTH);
+        leftPanel.add(scrollPane, BorderLayout.CENTER);
+            leftPanel.setBackground(Color.WHITE); // الخلفية البيضاء
+        leftPanel.setPreferredSize(new Dimension(300, 0)); // تحديد عرض اللوحة
+
+        // إضافة اللوحة إلى الجانب الأيسر من `categoryPanel`
+        categoryPanel.add(leftPanel, BorderLayout.WEST);
+
+        // يمكن إضافة مكونات أخرى في القسم الأيمن إذا لزم الأمر
+        JPanel rightPanel = new JPanel();
+        rightPanel.setBackground(Color.WHITE); // مثال على محتوى في الجانب الأيمن
+        categoryPanel.add(rightPanel, BorderLayout.CENTER);
+
         return categoryPanel;
     }
 

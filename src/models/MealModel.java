@@ -15,6 +15,8 @@ public class MealModel {
         this.department = department;
     }
 
+    public MealModel(){}
+
     public String getName() {
         return name;
     }

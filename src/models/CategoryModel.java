@@ -14,11 +14,13 @@ public class CategoryModel {
         this.meals = meals;
     }
 
-    public static Collection<String> getCategoryNames() {
+    public CategoryModel(){}
+
+    public Collection<String> getCategoryNames() {
         return categoryNames;
     }
 
-    public static void setCategoryNames(Collection<String> categoryNames) {
+    public void setCategoryNames(Collection<String> categoryNames) {
         CategoryModel.categoryNames = categoryNames;
     }
 
@@ -30,11 +32,11 @@ public class CategoryModel {
         this.meals = meals;
     }
 
-    public static Collection<String> getCategoryDescriptions() {
+    public Collection<String> getCategoryDescriptions() {
         return categoryDescriptions;
     }
 
-    public static void setCategoryDescriptions(Collection<String> categoryDescriptions) {
+    public void setCategoryDescriptions(Collection<String> categoryDescriptions) {
         CategoryModel.categoryDescriptions = categoryDescriptions;
     }
 }
