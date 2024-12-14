@@ -1,34 +1,34 @@
 package models;
 
 public class OrderModel {
-    String product, description;
+    String meal, type;
     int quantity;
     double price, total;
     String userName;
 
-    public OrderModel(String product, String description, int quantity, double price, double total, String userName) {
-        this.product = product;
-        this.description = description;
+    public OrderModel(String meal, String type, int quantity, double price, double total, String userName) {
+        this.meal = meal;
+        this.type = type;
         this.quantity = quantity;
         this.price = price;
         this.total = total;
         this.userName = userName;
     }
 
-    public String getProduct() {
-        return product;
+    public String getMeal() {
+        return meal;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public void setMeal(String meal) {
+        this.meal = meal;
     }
 
-    public String getDescription() {
-        return description;
+    public String getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getQuantity() {

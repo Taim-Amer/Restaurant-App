@@ -51,7 +51,7 @@ public class DataManager {
 
             gson.toJson(meals, mealWriter);
             gson.toJson(orders, orderWriter);
-            gson.toJson(categoryWriter, categoryWriter);
+            gson.toJson(categories, categoryWriter);
             gson.toJson(users, userWriter);
 
         } catch (IOException e) {

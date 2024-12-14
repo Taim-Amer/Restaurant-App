@@ -34,27 +34,81 @@ public class EmployeeController {
         return categoryDescriptions;
     }
 
+    public List<MealModel> getMealsByCategory(String categoryName) {
+        List<CategoryModel> categories = dataManager.getAllCategories();
+        for (CategoryModel category : categories) {
+            if (category.getCategoryNames().contains(categoryName)) {
+                return category.getMeals();
+            }
+        }
+        return new ArrayList<>();
+    }
+
     public void addCategory(String name, String description) {
         CategoryModel newCategory = new CategoryModel();
 
-        // إضافة الاسم والوصف إلى القوائم الخاصة بكل كائن
         newCategory.getCategoryNames().add(name);
         newCategory.getCategoryDescriptions().add(description);
 
-        // إضافة الصنف إلى القائمة
         dataManager.getAllCategories().add(newCategory);
         dataManager.saveData();
     }
 
-    public void addMeal(String name, int price, int quantity, String description) {
+    List<String> getAllMealNames() {
+        List<MealModel> meals = dataManager.getAllMeals();
+        List<String> mealNames = new ArrayList<>();
+        for (MealModel meal : meals) {
+            mealNames.add(meal.getName());
+        }
+        return mealNames;
+    }
+
+    List<String> getAllMealDescriptions() {
+        List<MealModel> meals = dataManager.getAllMeals();
+        List<String> mealDescriptions = new ArrayList<>();
+        for (MealModel meal : meals) {
+            mealDescriptions.add(meal.getDescription());
+        }
+        return mealDescriptions;
+    }
+
+    public void addMeal(String name, int price, int quantity, String description, String category) {
         MealModel newMeal = new MealModel();
         newMeal.setName(name);
         newMeal.setPrice(price);
         newMeal.setQuantity(quantity);
         newMeal.setDescription(description);
+        newMeal.setCategory(category);
 
         dataManager.getAllMeals().add(newMeal);
         dataManager.saveData();
+    }
+
+    public boolean updateMeals(String name, String newName, int newPrice, int newQuantity, String newDescription) {
+        List<MealModel> meals = dataManager.getAllMeals();
+        for (MealModel meal : meals) {
+            if (meal.getName().equalsIgnoreCase(name)) {
+                meal.setName(newName);
+                meal.setPrice(newPrice);
+                meal.setQuantity(newQuantity);
+                meal.setDescription(newDescription);
+                dataManager.saveData();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean deleteMeal(String name) {
+        List<MealModel> meals = dataManager.getAllMeals();
+        for (MealModel meal : meals) {
+            if (meal.getName().equalsIgnoreCase(name)) {
+                meals.remove(meal);
+                dataManager.saveData();
+                return true;
+            }
+        }
+        return false;
     }
 }
 

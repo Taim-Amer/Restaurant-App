@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryModel {
-    private List<String> categoryNames = new ArrayList<>();  // تغيير إلى List بدلاً من Collection
-    private List<String> categoryDescriptions = new ArrayList<>(); // تغيير إلى List بدلاً من Collection
-    private ArrayList<MealModel> meals;
+    private List<String> categoryNames = new ArrayList<>();
+    private List<String> categoryDescriptions = new ArrayList<>();
+    private List<MealModel> meals = new ArrayList<>();
 
-    public CategoryModel() {
-        // Constructor فارغ
-    }
+    public CategoryModel() {}
 
     public CategoryModel(ArrayList<MealModel> meals) {
         this.meals = meals;
@@ -32,7 +30,7 @@ public class CategoryModel {
         this.categoryDescriptions = categoryDescriptions;
     }
 
-    public ArrayList<MealModel> getMeals() {
+    public List<MealModel> getMeals() {
         return meals;
     }
 

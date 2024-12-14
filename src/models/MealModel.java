@@ -1,24 +1,45 @@
 package models;
 
-public class MealModel {
-    String name;
-    double price;
-    int quantity;
-    String description;
-    String department;
+import java.util.List;
 
-    public MealModel(String name, double price, int quantity, String description, String department) {
+public class MealModel {
+    private String name;
+    private double price;
+    private int quantity;
+    private List<String> ingredients;
+    private String category;
+    private String description;
+
+    public MealModel(String name, double price, int quantity, List<String> ingredients, String category, String description) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.ingredients = ingredients;
+        this.category = category;
         this.description = description;
-        this.department = department;
     }
 
-    public MealModel(){}
+    public MealModel() {
+    }
 
     public String getName() {
         return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setName(String name) {
@@ -41,19 +62,11 @@ public class MealModel {
         this.quantity = quantity;
     }
 
-    public String getDescription() {
-        return description;
+    public List<String> getIngredients() {
+        return ingredients;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
     }
 }

@@ -1,10 +1,42 @@
 [
   {
-    "id": 1,
-    "name": "Burger",
-    "price": 100.0,
-    "ingredients": [
-      "tomatos"
-    ]
+    "name": "Margherita Pizza",
+    "price": 12.99,
+    "quantity": 15,
+    "ingredients": ["Dough", "Tomato Sauce", "Mozzarella Cheese", "Basil"],
+    "category": "Italian",
+    "description": "Classic Italian pizza with fresh basil and cheese."
+  },
+  {
+    "name": "Sushi Platter",
+    "price": 25.50,
+    "quantity": 10,
+    "ingredients": ["Rice", "Nori", "Fresh Salmon", "Avocado"],
+    "category": "Japanese",
+    "description": "A variety of fresh sushi rolls served with soy sauce and wasabi."
+  },
+  {
+    "name": "Beef Burger",
+    "price": 9.99,
+    "quantity": 20,
+    "ingredients": ["Beef Patty", "Lettuce", "Tomato", "Cheddar Cheese", "Burger Bun"],
+    "category": "Fast Food",
+    "description": "Juicy beef burger with fresh vegetables and melted cheddar."
+  },
+  {
+    "name": "Caesar Salad",
+    "price": 7.99,
+    "quantity": 25,
+    "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
+    "category": "Salads",
+    "description": "Crisp salad with creamy Caesar dressing and Parmesan cheese."
+  },
+  {
+    "name": "Grilled Salmon",
+    "price": 18.75,
+    "quantity": 12,
+    "ingredients": ["Salmon Fillet", "Olive Oil", "Garlic", "Lemon"],
+    "category": "Seafood",
+    "description": "Tender grilled salmon with a hint of garlic and lemon."
   }
 ]
