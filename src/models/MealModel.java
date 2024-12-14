@@ -3,6 +3,7 @@ package models;
 import java.util.List;
 
 public class MealModel {
+    private int id;
     private String name;
     private double price;
     private int quantity;
@@ -10,7 +11,8 @@ public class MealModel {
     private String category;
     private String description;
 
-    public MealModel(String name, double price, int quantity, List<String> ingredients, String category, String description) {
+    public MealModel(int id, String name, double price, int quantity, List<String> ingredients, String category, String description) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -20,6 +22,14 @@ public class MealModel {
     }
 
     public MealModel() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

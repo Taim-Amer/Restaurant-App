@@ -8,12 +8,14 @@
     ],
     "meals": [
       {
+        "id": 0,
         "name": "Sweet and Sour Pork",
         "price": 12.0,
         "quantity": 20,
         "description": "A classic Chinese dish with a sweet and tangy sauce."
       },
       {
+        "id": 0,
         "name": "Kung Pao Chicken",
         "price": 14.0,
         "quantity": 15,
@@ -30,12 +32,14 @@
     ],
     "meals": [
       {
+        "id": 0,
         "name": "Margherita Pizza",
         "price": 10.0,
         "quantity": 25,
         "description": "A simple pizza with tomato, mozzarella, and basil."
       },
       {
+        "id": 0,
         "name": "Spaghetti Carbonara",
         "price": 12.0,
         "quantity": 18,
@@ -52,12 +56,14 @@
     ],
     "meals": [
       {
+        "id": 0,
         "name": "Grilled Salmon",
         "price": 18.0,
         "quantity": 30,
         "description": "Fresh salmon grilled to perfection."
       },
       {
+        "id": 0,
         "name": "Shrimp Scampi",
         "price": 16.0,
         "quantity": 22,
@@ -74,12 +80,14 @@
     ],
     "meals": [
       {
+        "id": 0,
         "name": "Chocolate Cake",
         "price": 6.0,
         "quantity": 50,
         "description": "A rich, moist chocolate cake with a creamy frosting."
       },
       {
+        "id": 0,
         "name": "Tiramisu",
         "price": 7.0,
         "quantity": 40,
@@ -93,7 +101,8 @@
     ],
     "categoryDescriptions": [
       "Healthy and plant-based dishes"
-    ]
+    ],
+    "meals": []
   },
   {
     "categoryNames": [
@@ -101,7 +110,8 @@
     ],
     "categoryDescriptions": [
       "Healthy and plant-based dishes"
-    ]
+    ],
+    "meals": []
   },
   {
     "categoryNames": [
@@ -109,6 +119,52 @@
     ],
     "categoryDescriptions": [
       "Healthy and plant-based dishes"
-    ]
+    ],
+    "meals": []
+  },
+  {
+    "categoryNames": [
+      "Vegetarian Food"
+    ],
+    "categoryDescriptions": [
+      "Healthy and plant-based dishes"
+    ],
+    "meals": []
+  },
+  {
+    "categoryNames": [
+      "Vegetarian Food"
+    ],
+    "categoryDescriptions": [
+      "Healthy and plant-based dishes"
+    ],
+    "meals": []
+  },
+  {
+    "categoryNames": [
+      "Vegetarian Food"
+    ],
+    "categoryDescriptions": [
+      "Healthy and plant-based dishes"
+    ],
+    "meals": []
+  },
+  {
+    "categoryNames": [
+      "Vegetarian Food"
+    ],
+    "categoryDescriptions": [
+      "Healthy and plant-based dishes"
+    ],
+    "meals": []
+  },
+  {
+    "categoryNames": [
+      "Vegetarian Food"
+    ],
+    "categoryDescriptions": [
+      "Healthy and plant-based dishes"
+    ],
+    "meals": []
   }
 ]

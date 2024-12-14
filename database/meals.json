@@ -1,42 +1,75 @@
 [
   {
-    "name": "Margherita Pizza",
-    "price": 12.99,
-    "quantity": 15,
-    "ingredients": ["Dough", "Tomato Sauce", "Mozzarella Cheese", "Basil"],
-    "category": "Italian",
-    "description": "Classic Italian pizza with fresh basil and cheese."
-  },
-  {
-    "name": "Sushi Platter",
-    "price": 25.50,
-    "quantity": 10,
-    "ingredients": ["Rice", "Nori", "Fresh Salmon", "Avocado"],
-    "category": "Japanese",
-    "description": "A variety of fresh sushi rolls served with soy sauce and wasabi."
-  },
-  {
-    "name": "Beef Burger",
-    "price": 9.99,
+    "id": 1,
+    "name": "Grilled Chicken",
+    "price": 50.0,
     "quantity": 20,
-    "ingredients": ["Beef Patty", "Lettuce", "Tomato", "Cheddar Cheese", "Burger Bun"],
-    "category": "Fast Food",
-    "description": "Juicy beef burger with fresh vegetables and melted cheddar."
+    "ingredients": [
+      "Chicken Breast",
+      "Olive Oil",
+      "Garlic",
+      "Herbs",
+      "Lemon Juice"
+    ],
+    "category": "Main Course",
+    "description": "Juicy grilled chicken with a flavorful herb marinade."
   },
   {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "price": 35.0,
+    "quantity": 15,
+    "ingredients": [
+      "Pizza Dough",
+      "Tomato Sauce",
+      "Mozzarella Cheese",
+      "Basil"
+    ],
+    "category": "Pizza",
+    "description": "Classic Italian pizza with fresh basil and mozzarella cheese."
+  },
+  {
+    "id": 3,
     "name": "Caesar Salad",
-    "price": 7.99,
-    "quantity": 25,
-    "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
+    "price": 25.0,
+    "quantity": 30,
+    "ingredients": [
+      "Romaine Lettuce",
+      "Croutons",
+      "Parmesan Cheese",
+      "Caesar Dressing"
+    ],
     "category": "Salads",
-    "description": "Crisp salad with creamy Caesar dressing and Parmesan cheese."
+    "description": "Crisp romaine lettuce tossed with Caesar dressing and topped with croutons."
   },
   {
-    "name": "Grilled Salmon",
-    "price": 18.75,
-    "quantity": 12,
-    "ingredients": ["Salmon Fillet", "Olive Oil", "Garlic", "Lemon"],
-    "category": "Seafood",
-    "description": "Tender grilled salmon with a hint of garlic and lemon."
+    "id": 4,
+    "name": "Beef Burger",
+    "price": 40.0,
+    "quantity": 25,
+    "ingredients": [
+      "Beef Patty",
+      "Burger Bun",
+      "Lettuce",
+      "Tomato",
+      "Cheddar Cheese"
+    ],
+    "category": "Burgers",
+    "description": "A hearty beef burger with fresh vegetables and cheddar cheese."
+  },
+  {
+    "id": 5,
+    "name": "Chocolate Cake",
+    "price": 30.0,
+    "quantity": 10,
+    "ingredients": [
+      "Flour",
+      "Cocoa Powder",
+      "Sugar",
+      "Eggs",
+      "Butter"
+    ],
+    "category": "Desserts",
+    "description": "Rich and moist chocolate cake, perfect for dessert lovers."
   }
 ]
