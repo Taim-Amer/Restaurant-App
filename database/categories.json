@@ -1,0 +1,18 @@
+[
+  {
+    "categoryNames": ["Pizza", "Pasta", "Burgers"],
+    "categoryDescriptions": [
+      "Delicious cheese pizza with various toppings.",
+      "Tasty pasta with a rich tomato sauce and Parmesan.",
+      "Juicy beef burgers with fresh lettuce and cheese."
+    ]
+  },
+  {
+    "categoryNames": ["Salads", "Desserts", "Drinks"],
+    "categoryDescriptions": [
+      "Fresh and healthy vegetable salads with dressing.",
+      "Delicious desserts like cakes and ice cream.",
+      "Refreshing drinks including juices and sodas."
+    ]
+  }
+]

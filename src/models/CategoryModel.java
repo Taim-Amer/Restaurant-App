@@ -1,25 +1,35 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.List;
 
 public class CategoryModel {
-    static Collection<String> categoryNames = new LinkedList<>();
-    static Collection<String> categoryDescriptions = new LinkedList<>();
-    ArrayList<MealModel> meals;
-    static int size = 0;
+    private List<String> categoryNames = new ArrayList<>();  // تغيير إلى List بدلاً من Collection
+    private List<String> categoryDescriptions = new ArrayList<>(); // تغيير إلى List بدلاً من Collection
+    private ArrayList<MealModel> meals;
+
+    public CategoryModel() {
+        // Constructor فارغ
+    }
 
     public CategoryModel(ArrayList<MealModel> meals) {
         this.meals = meals;
     }
 
-    public static Collection<String> getCategoryNames() {
+    public List<String> getCategoryNames() {
         return categoryNames;
     }
 
-    public static void setCategoryNames(Collection<String> categoryNames) {
-        CategoryModel.categoryNames = categoryNames;
+    public void setCategoryNames(List<String> categoryNames) {
+        this.categoryNames = categoryNames;
+    }
+
+    public List<String> getCategoryDescriptions() {
+        return categoryDescriptions;
+    }
+
+    public void setCategoryDescriptions(List<String> categoryDescriptions) {
+        this.categoryDescriptions = categoryDescriptions;
     }
 
     public ArrayList<MealModel> getMeals() {
@@ -28,13 +38,5 @@ public class CategoryModel {
 
     public void setMeals(ArrayList<MealModel> meals) {
         this.meals = meals;
-    }
-
-    public static Collection<String> getCategoryDescriptions() {
-        return categoryDescriptions;
-    }
-
-    public static void setCategoryDescriptions(Collection<String> categoryDescriptions) {
-        CategoryModel.categoryDescriptions = categoryDescriptions;
     }
 }

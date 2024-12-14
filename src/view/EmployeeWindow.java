@@ -1,11 +1,13 @@
 package view;
 
+import controllers.EmployeeController;
+import helpers.Functions;
 import view.components.Button;
 import view.components.GradientPanel;
-import helpers.Functions;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class EmployeeWindow extends JFrame {
     private final JPanel panel;
@@ -65,9 +67,43 @@ public class EmployeeWindow extends JFrame {
         return customerPanel;
     }
 
+    // دالة لإنشاء محتوى خاص بـ Category
+
     private JPanel createCategoryPanel() {
         JPanel categoryPanel = new JPanel();
-        categoryPanel.add(new JLabel("محتوى خاص بـ Category"));
+        categoryPanel.setLayout(new BorderLayout());
+
+        EmployeeController employeeController = new EmployeeController();
+        List<String> categoryNames = employeeController.getAllCategoryNames();
+
+        System.out.println("Category names: " + categoryNames); // تتبع البيانات
+
+        // تحقق إذا كانت البيانات فارغة
+        if (categoryNames.isEmpty()) {
+            System.out.println("No categories available.");
+        }
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (String name : categoryNames) {
+            listModel.addElement(name);
+        }
+
+        JList<String> categoryList = new JList<>(listModel);
+        categoryList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        JScrollPane scrollPane = new JScrollPane(categoryList);
+
+        JPanel leftPanel = new JPanel(new BorderLayout());
+        leftPanel.add(scrollPane, BorderLayout.CENTER);
+        leftPanel.setBackground(Color.WHITE);
+        leftPanel.setPreferredSize(new Dimension(300, 0));
+
+        categoryPanel.add(leftPanel, BorderLayout.WEST);
+
+        JPanel rightPanel = new JPanel();
+        rightPanel.setBackground(Color.WHITE);
+        categoryPanel.add(rightPanel, BorderLayout.CENTER);
+
         return categoryPanel;
     }
 
