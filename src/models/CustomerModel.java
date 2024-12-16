@@ -2,18 +2,17 @@ package models;
 
 public class CustomerModel {
     int id;
-    String NameCustomer;
     String address;
     String userName;
     String password;
+    String phone;
 
-    public CustomerModel(int id, String NameCustomer, String address, String userName, String password) {
+    public CustomerModel(int id, String address, String userName, String password, String phone) {
         this.id = id;
-        this.NameCustomer = NameCustomer;
         this.address = address;
         this.userName = userName;
         this.password = password;
-
+        this.phone = phone;
     }
 
     public int getId() {
@@ -22,14 +21,6 @@ public class CustomerModel {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNameCustomer() {
-        return NameCustomer;
-    }
-
-    public void setNameCustomer(String nameCustomer) {
-        NameCustomer = nameCustomer;
     }
 
     public String getAddress() {
@@ -54,6 +45,14 @@ public class CustomerModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
 

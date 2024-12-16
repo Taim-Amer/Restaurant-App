@@ -1,15 +1,19 @@
 package models;
 
 public class OrderModel {
-    int id;
-    String meal, type;
-    String status;
-    int quantity;
-    double price, total;
-    String userName;
+    private int orderId;
+    private int customerId;
+    private String meal;
+    private String type;
+    private int quantity;
+    private double price;
+    private double total;
+    private String status;
+    private String userName;
 
-    public OrderModel(int id, String meal, String type, int quantity, double price, double total, String userName, String status) {
-        this.id = id;
+    public OrderModel(int orderId, int customerId, String meal, String type, int quantity, double price, double total, String userName, String status) {
+        this.orderId = orderId;
+        this.customerId = customerId;
         this.meal = meal;
         this.type = type;
         this.quantity = quantity;
@@ -19,20 +23,20 @@ public class OrderModel {
         this.status = status;
     }
 
-    public int getId() {
-        return id;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public String getStatus() {
-        return status;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getMeal() {
@@ -73,6 +77,14 @@ public class OrderModel {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getUserName() {

@@ -40,7 +40,14 @@ public class DataManager {
     public List<OrderModel> getAllOrders() {
         return orders;
     }
-    public List<CategoryModel> getAllCategories() {return categories;}
+
+    public List<CategoryModel> getAllCategories() {
+        return categories;
+    }
+
+    public List<CustomerModel> getAllCustomers() {
+        return users;
+    }
 
     public void saveData() {
         Gson gson = new Gson();
