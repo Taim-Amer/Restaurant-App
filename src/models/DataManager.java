@@ -21,16 +21,12 @@ public class DataManager {
     private static final String USERS_FILE = "database/users.json";
     private static final String CATEGORIES_FILE = "database/categories.json";
 
-    // Constructor
+    //Constructor
     public DataManager() {
         meals = new ArrayList<>();
         orders = new ArrayList<>();
         users = new ArrayList<>();
         categories = new ArrayList<>();
-    }
-
-    public void addMeal(MealModel meal) {
-        meals.add(meal);
     }
 
     public List<MealModel> getAllMeals() {

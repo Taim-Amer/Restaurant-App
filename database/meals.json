@@ -1,1 +1,75 @@
-[{"id":1,"name":"Grilled Chicken","price":50.0,"quantity":20,"ingredients":["Chicken Breast","Olive Oil","Garlic","Herbs","Lemon Juice"],"category":"Main Course","description":"Juicy grilled chicken with a flavorful herb marinade."},{"id":2,"name":"Margherita Pizza","price":35.0,"quantity":15,"ingredients":["Pizza Dough","Tomato Sauce","Mozzarella Cheese","Basil"],"category":"Pizza","description":"Classic Italian pizza with fresh basil and mozzarella cheese."},{"id":3,"name":"Caesar Salad","price":25.0,"quantity":30,"ingredients":["Romaine Lettuce","Croutons","Parmesan Cheese","Caesar Dressing"],"category":"Salads","description":"Crisp romaine lettuce tossed with Caesar dressing and topped with croutons."},{"id":4,"name":"Beef Burger","price":40.0,"quantity":25,"ingredients":["Beef Patty","Burger Bun","Lettuce","Tomato","Cheddar Cheese"],"category":"Burgers","description":"A hearty beef burger with fresh vegetables and cheddar cheese."},{"id":5,"name":"Chocolate Cake","price":30.0,"quantity":10,"ingredients":["Flour","Cocoa Powder","Sugar","Eggs","Butter"],"category":"Desserts","description":"Rich and moist chocolate cake, perfect for dessert lovers."}]
+[
+  {
+    "id": 1,
+    "name": "Grilled Chicken",
+    "price": 50.0,
+    "quantity": 20,
+    "ingredients": [
+      "Chicken Breast",
+      "Olive Oil",
+      "Garlic",
+      "Herbs",
+      "Lemon Juice"
+    ],
+    "category": "Main Course",
+    "description": "Juicy grilled chicken with a flavorful herb marinade."
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "price": 35.0,
+    "quantity": 15,
+    "ingredients": [
+      "Pizza Dough",
+      "Tomato Sauce",
+      "Mozzarella Cheese",
+      "Basil"
+    ],
+    "category": "Pizza",
+    "description": "Classic Italian pizza with fresh basil and mozzarella cheese."
+  },
+  {
+    "id": 3,
+    "name": "Caesar Salad",
+    "price": 25.0,
+    "quantity": 30,
+    "ingredients": [
+      "Romaine Lettuce",
+      "Croutons",
+      "Parmesan Cheese",
+      "Caesar Dressing"
+    ],
+    "category": "Salads",
+    "description": "Crisp romaine lettuce tossed with Caesar dressing and topped with croutons."
+  },
+  {
+    "id": 4,
+    "name": "Beef Burger",
+    "price": 40.0,
+    "quantity": 25,
+    "ingredients": [
+      "Beef Patty",
+      "Burger Bun",
+      "Lettuce",
+      "Tomato",
+      "Cheddar Cheese"
+    ],
+    "category": "Burgers",
+    "description": "A hearty beef burger with fresh vegetables and cheddar cheese."
+  },
+  {
+    "id": 5,
+    "name": "Chocolate Cake",
+    "price": 30.0,
+    "quantity": 10,
+    "ingredients": [
+      "Flour",
+      "Cocoa Powder",
+      "Sugar",
+      "Eggs",
+      "Butter"
+    ],
+    "category": "Desserts",
+    "description": "Rich and moist chocolate cake, perfect for dessert lovers."
+  }
+]
