@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryModel {
-    private List<String> categoryNames = new ArrayList<>();
+    public List<String> categoryNames = new ArrayList<>();
     private List<String> categoryDescriptions = new ArrayList<>();
     private List<MealModel> meals = new ArrayList<>();
 

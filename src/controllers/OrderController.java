@@ -4,7 +4,6 @@ import models.CustomerModel;
 import models.DataManager;
 import models.MealModel;
 import models.OrderModel;
-import utils.SMSService;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,7 +26,7 @@ public class OrderController {
         return dataManager.getAllMeals();
     }
 
-    public void chooseMeal(int id, int quantity, String username, String type) {
+    public void chooseMeal(int id, int quantity, String username, String type, double paidAmount) {
         List<MealModel> meals = dataManager.getAllMeals();
         for (MealModel meal : meals) {
             if (meal.getId() == id) {
@@ -50,7 +49,15 @@ public class OrderController {
                 meal.setQuantity(meal.getQuantity() - quantity);
                 dataManager.saveData();
 
-                System.out.println("Order successfully!");
+                if (type.equalsIgnoreCase("dine-in")) {
+                    System.out.println("Order placed successfully! Dine-in service selected.");
+                } else if (type.equalsIgnoreCase("takeaway")) {
+                    System.out.println("Order placed successfully! Takeaway service selected.");
+                } else {
+                    System.out.println("Order placed successfully! Unknown service type, defaulting to preparing.");
+                }
+
+                addIncentives(order.getOrderId(), paidAmount);
                 return;
             }
         }
@@ -67,7 +74,7 @@ public class OrderController {
                 order.setStatus(newStatus);
                 dataManager.saveData();
 
-                sendNotification(order);
+//                sendNotification(order);
                 System.out.println("Order status updated and notification sent.");
                 return;
             }
@@ -75,18 +82,18 @@ public class OrderController {
         System.out.println("Order or customer not found.");
     }
 
-    public void sendNotification(OrderModel order) {
-        String notificationMessage = "Order Status Update:\n";
-        notificationMessage += "Order ID: " + order.getOrderId() + "\n";
-        notificationMessage += "Meal: " + order.getMeal() + "\n";
-        notificationMessage += "Quantity: " + order.getQuantity() + "\n";
-        notificationMessage += "Status: " + order.getStatus() + "\n";
-
-        String customerPhoneNumber = getCustomerPhoneNumber(order.getCustomerId());
-
-        SMSService smsNotification = new SMSService();
-        smsNotification.sendSMS(customerPhoneNumber, notificationMessage);
-    }
+//    public void sendNotification(OrderModel order) {
+//        String notificationMessage = "Order Status Update:\n";
+//        notificationMessage += "Order ID: " + order.getOrderId() + "\n";
+//        notificationMessage += "Meal: " + order.getMeal() + "\n";
+//        notificationMessage += "Quantity: " + order.getQuantity() + "\n";
+//        notificationMessage += "Status: " + order.getStatus() + "\n";
+//
+//        String customerPhoneNumber = getCustomerPhoneNumber(order.getCustomerId());
+//
+//        SMSService smsNotification = new SMSService();
+//        smsNotification.sendSMS(customerPhoneNumber, notificationMessage);
+//    }
 
     public String getCustomerPhoneNumber(int customerId) {
         List<CustomerModel> customers = dataManager.getAllCustomers();
@@ -99,7 +106,7 @@ public class OrderController {
     }
 
     public void exportOrdersToFile() {
-        try (FileWriter writer = new FileWriter("C:\\Users\\taim\\Desktop\\restaurant\\order.txt")) {
+        try (FileWriter writer = new FileWriter("reports")) {
             writer.write("Order Details:\n");
             writer.write("-------------------------------------------------\n");
             for (OrderModel order : orders) {
@@ -112,7 +119,7 @@ public class OrderController {
                 writer.write("Customer: " + order.getUserName() + "\n");
                 writer.write("-------------------------------------------------\n");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("An error occurred while exporting orders: " + e.getMessage());
         }
     }
@@ -139,7 +146,7 @@ public class OrderController {
     }
 
     public void exportReport() {
-        try (FileWriter writer = new FileWriter("C:\\Users\\taim\\Desktop\\restaurant\\report.txt")) {
+        try (FileWriter writer = new FileWriter("reports")) {
             int totalOrders = orders.size();
             writer.write("Total Orders: " + totalOrders + "\n");
 
@@ -178,6 +185,7 @@ public class OrderController {
 
         return mostOrderedMeal;
     }
+
     private double getDailyRevenue() {
         double totalRevenue = 0;
         for (OrderModel order : orders) {
@@ -198,8 +206,23 @@ public class OrderController {
                 regularCustomers.add(entry.getKey());
             }
         }
-
         return regularCustomers;
+    }
+    public void addIncentives(int orderId, double paidAmount) {
+        for (OrderModel order : orders) {
+            if (order.getOrderId() == orderId) {
+                double total = order.getTotal();
+                if (paidAmount > total) {
+                    double incentives = paidAmount - total;
+                    System.out.println("Incentives added for Order ID " + orderId + ": $" + incentives);
+                    return;
+                } else {
+                    System.out.println("No incentives added. Paid amount is not greater than the total.");
+                }
+                return;
+            }
+        }
+        System.out.println("Order ID not found.");
     }
 
 }
